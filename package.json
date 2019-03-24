@@ -1,0 +1,19 @@
+{
+  "name": "translators-lexical-analysys",
+  "version": "1.0.0",
+  "description": "Translators - Lexical analysys",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node main.js"
+  },
+  "keywords": [
+    "Translators",
+    "JS"
+  ],
+  "author": "Szymon Męcnarowski <smecnarowski@gmail.com>",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
