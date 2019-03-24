@@ -2,7 +2,7 @@
 
 #### To install:
 
-    npm run install
+    npm install
 
 #### To run:
 
