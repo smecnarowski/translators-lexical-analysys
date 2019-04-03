@@ -10,6 +10,7 @@ const examples = [
     'x * y - z',
     'zmienna1 + zmienna2',
     'w1a*w2b',
+    'A3457g4h - t !!!!~ 345',
     '10.3-alfa',
     '0.685739*5 ',
     '(x+y)*z',
@@ -20,9 +21,11 @@ const examples = [
 const results = []
 
 examples.forEach(example => {
+    const extractor = new TokensExtractor(example)
     const result = {
         example,
-        tokens: new TokensExtractor(example).tokens
+        tokens: extractor.tokens,
+        ignored: extractor.ignored
     }
 
     results.push(result)

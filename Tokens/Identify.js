@@ -3,7 +3,7 @@ import Token from "./Token";
 class Identify extends Token {
     constructor() {
         super()
-        this.regex = /^[a-z]+\d*$/
+        this.regex = /^[a-zA-Z]{1}[a-zA-Z0-9]*$/
     }
 }
 
