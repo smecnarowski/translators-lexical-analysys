@@ -48,11 +48,15 @@ class TokensExtractor {
             if (position === 0) {
                 baseLexicalSymbol = baseLexicalSymbol.slice(1)
             } else {
-                this.ignoredStrings.push({
-                    position: baseCursorPosition,
-                    length: position,
-                    value: baseLexicalSymbol.slice(0, position)
-                })
+                let splittedIgnoredString = (baseLexicalSymbol.slice(0, position)).split('')
+                splittedIgnoredString.forEach((char, index) => {
+                    if (char.trim().length) {
+                        this.ignoredStrings.push({
+                            position: baseCursorPosition + index,
+                            value: char
+                        })
+                    }
+                });
                 baseLexicalSymbol = baseLexicalSymbol.slice(position+1)
             }
 

@@ -15,6 +15,7 @@ const examples = [
     '0.685739*5 ',
     '(x+y)*z',
     '(a * a) + b',
+    '(a * a#) + b',
     '(0.1 - beta) + 8',
 ]
 
@@ -24,8 +25,12 @@ examples.forEach(example => {
     const extractor = new TokensExtractor(example)
     const result = {
         example,
-        tokens: extractor.tokens,
-        ignored: extractor.ignored
+        tokens: extractor.tokens
+    }
+
+    const ignored = extractor.ignored
+    if (ignored.length) {
+        result['ignored'] = ignored
     }
 
     results.push(result)
